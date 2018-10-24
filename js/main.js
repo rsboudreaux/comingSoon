@@ -13,12 +13,12 @@ function initializeSite() {
 	(function() {
 	    function centerInit(){
 
-			var sphereContent = $('.sphere'),
-				sphereHeight = sphereContent.height(),
+			var logoContent = $('.logo'),
+				logoHeight = logoContent.height(),
 				parentHeight = $(window).height(),
-				topMargin = (parentHeight - sphereHeight) / 2;
+				topMargin = (parentHeight - logoHeight) / 2;
 
-			sphereContent.css({
+			logoContent.css({
 				"margin-top" : topMargin+"px"
 			});
 
