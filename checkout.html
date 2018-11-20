@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Load Stripe.js on your website. -->
-    <script src="https://js.stripe.com/v3"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Life Exponential</title>
 </head>
 <body>
-    <!--<form action="your-server-side-code" method="POST">
-        <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_y9mlnRSnncQFj6LDvL4YEBuQ"
-            data-amount="999"
-            data-name="Life Exponential"
-            data-description="Example charge"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto"
-            data-zip-code="true">
-        </script>
-    </form>-->
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
 
-    <!-- Create a button that your customers click to complete their purchase. -->
-    <button id="checkout-button">Pay</button>
-    <div id="error-message"></div>
+  <!-- Create a button that your customers click to complete their purchase. -->
+  <button id="checkout-button">Pay</button>
+  <div id="error-message"></div>
 
-    <script>
-        var stripe = Stripe('pk_live_OcP3EmSAxstuYAju3DvzvkG3', {
-            betas: ['checkout_beta_3']
-        });
-    
-        var checkoutButton = document.getElementById('checkout-button');
-        checkoutButton.addEventListener('click', function () {
-            // When the customer clicks on the button, redirect
-            // them to Checkout.
-            stripe.redirectToCheckout({
-            items: [{sku: 'sku_E0Nz8wK8iswWFq', quantity: 1}],
-            successUrl: 'https://www.troymork.life/success',
-            cancelUrl: 'https://www.troymork.life/canceled',
-            })
-            .then(function (result) {
-            if (result.error) {
-                // If `redirectToCheckout` fails due to a browser or network
-                // error, display the localized error message to your customer.
-                var displayError = document.getElementById('error-message');
-                displayError.textContent = result.error.message;
-            }
-            });
-        });
-    </script>
+  <script>
+    var stripe = Stripe('pk_live_OcP3EmSAxstuYAju3DvzvkG3', {
+      betas: ['checkout_beta_3']
+    });
 
+    var checkoutButton = document.getElementById('checkout-button');
+    checkoutButton.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_E0XOBq3NE7MKU0', quantity: 1}],
+        successUrl: 'https://www.troymork.life/',
+        cancelUrl: 'https://www.troymork.life/',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  </script>
 </body>
-<footer>
-    
-</footer>
 </html>
